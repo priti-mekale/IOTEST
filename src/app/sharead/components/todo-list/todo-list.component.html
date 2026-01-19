@@ -1,0 +1,21 @@
+<ul class="list-group" *ngIf="inpTodosArray.length > 0; else noTodos">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let todo of inpTodosArray">
+        <span>{{todo.todo}}</span>
+        <div>
+           <button mat-icon-button color="primary" (click)="onTodoEdit(todo)" aria-label="Edit Todo">
+  <mat-icon>edit</mat-icon>
+</button>
+
+<button mat-icon-button color="warn" (click)="onTodoDelete(todo)" aria-label="Delete Todo">
+  <mat-icon>delete</mat-icon>
+</button>
+        </div>
+    </li>
+</ul>
+<ng-template #noTodos>
+    <ul class="list-group">
+        <li class="list-group-item">
+            No todos available...
+        </li>
+    </ul>
+</ng-template>
