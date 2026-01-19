@@ -3,14 +3,14 @@
 <div class="row mb-5">
     <div class="col-md-5 mb-2 mb-md-0">
         <app-todo-form
-        (outAddedTodo)="getAddedTodo($event)"
-        [inpEditTodo]="editTodo"
+        (AddedTodo)="getAddedTodo($event)"
+        [iEditTodo]="editTodo"
         (outUpdatedTodo)="getUpdatedTodo($event)"
         ></app-todo-form>
     </div>
     <div class="col-md-7">
         <app-todo-list
-        [inpTodosArray]="todosArray"
+        [todosArr]="todosArray"
         (outEditTodo)="getEditedTodo($event)"
         (outDeleteTodo)="getDeletedTodo($event)"
         ></app-todo-list>

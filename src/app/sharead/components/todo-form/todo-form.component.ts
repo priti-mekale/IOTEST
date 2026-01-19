@@ -13,8 +13,8 @@ export class TodoFormComponent implements OnInit {
 
  isEditMode: boolean = false
   @ViewChild('todoForm') todoForm!: NgForm
-  @Output() outAddedTodo: EventEmitter<Itodo> = new EventEmitter()
-  @Input() inpEditTodo !: Itodo
+  @Output() AddedTodo: EventEmitter<Itodo> = new EventEmitter()
+  @Input() iEditTodo !: Itodo
   @Output() outUpdatedTodo: EventEmitter<Itodo> = new EventEmitter()
 
   constructor(
@@ -36,7 +36,7 @@ export class TodoFormComponent implements OnInit {
     if(this.todoForm.valid){
       let obj = {...this.todoForm.value, id: this._uuid.uuid()}
       this.todoForm.resetForm()
-      this.outAddedTodo.emit(obj)
+      this.AddedTodo.emit(obj)
     }else{
       this._utilityService.showAlert(`Fill all the required feilds!`, `alert-warning`)
     }
@@ -44,7 +44,7 @@ export class TodoFormComponent implements OnInit {
 
   onTodoUpdate() {
     if(this.todoForm.valid){
-      let obj = {...this.todoForm.value, id: this.inpEditTodo.id}
+      let obj = {...this.todoForm.value, id: this.iEditTodo.id}
       this.todoForm.resetForm()
       this.outUpdatedTodo.emit(obj)
       this.isEditMode = false

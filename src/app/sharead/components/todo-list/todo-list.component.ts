@@ -8,7 +8,7 @@ import { Itodo } from '../../model/todo';
 })
 export class TodoListComponent implements OnInit {
 
-  @Input() inpTodosArray !: Array<Itodo>
+  @Input() todosArr !: Array<Itodo>
   @Output() outEditTodo : EventEmitter<Itodo> = new EventEmitter()
   @Output() outDeleteTodo : EventEmitter<Itodo> = new EventEmitter()
 
