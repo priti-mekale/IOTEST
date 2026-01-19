@@ -1,14 +1,14 @@
 <h2 style="font-weight: bold;">Todo Task</h2>
 
 <div class="row mb-5">
-    <div class="col-md-5 mb-2 mb-md-0">
+    <div class="col-md-6 mb-2 mb-md-0">
         <app-todo-form
         (AddedTodo)="getAddedTodo($event)"
         [iEditTodo]="editTodo"
         (outUpdatedTodo)="getUpdatedTodo($event)"
         ></app-todo-form>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-6">
         <app-todo-list
         [todosArr]="todosArray"
         (outEditTodo)="getEditedTodo($event)"
